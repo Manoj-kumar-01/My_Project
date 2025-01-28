@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: url('love.png');
+        display: flex;
+        height:100vh;
+        flex-direction: column;
+        overflow: auto;
+        position: relative;
+    }
+    h1{
+        top: 0;
+        color:pink;
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        text-shadow: 0px 0px 10px red;
+        animation:blink 2.5s ease-in-out infinite both;
+        transition: all 10s ease-in-out;
+    }
+    h1::first-letter{
+        font-size: 55px;
+        color: red;
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .inputs{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 50vh;
+    }
+   
+    .input1,.input2
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 25%;
+        background-color: rgba(255, 255, 255, 0.15);
+        padding: 10px;
+        border-radius: 15% 20% 35% 55%;
+        box-shadow: 0px 0px 20px violet;
+    }
+    .input1 img{
+        filter: drop-shadow(0px 0px 10px lightpink);
+    }
+    .input2 img{
+        filter: drop-shadow(0px 0px 10px lightpink);
+    }
+    #heart1,#heart2{
+        animation: heartbeat 1s ease-in-out infinite both;
+        filter: drop-shadow(0px 0px 10px black);
+    }
+    input{
+        font-family: cursive;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        box-shadow: 0px 0px 10px violet;
+        background:conic-gradient(lightpink 20%, lightblue 20%, lightblue 40%, lightpink 40%, lightpink 60%, lightblue 60%, lightblue 80%, lightpink 80%, lightpink 100%);
+    }
+    button{
+        font-family: cursive;
+        text-shadow: 0px 0px 10px red;
+        width: 200px;
+        height: 60px;
+        border-radius: 9px;
+        border: none;
+        background:conic-gradient(lightpink 20%, lightblue 20%, lightblue 40%, lightpink 40%, lightpink 60%, lightblue 60%, lightblue 80%, lightpink 80%, lightpink 100%);
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0px 0px 10px violet;
+        cursor:pointer;
+    }
+    button:hover{
+        background-color:transparent;
+        filter: blur(1px);
+    }
+    button::after{
+        content:"Check Flames";
+    }
+    button:hover::after{
+        content:"think before you click!";
+        font-size:large;
+    }
+    @keyframes heartbeat{
+        from{
+            transform: scale(0.5);
+            opacity: 0.1;
+        }
+        to{
+            transform: scale(1);
+        }
+    }
+    @keyframes blink{
+        0%{
+            opacity: 0;
+        }
+       
+        100%{
+            opacity: 1;
+        }
+    }
+    .hearteffect img{
+        width:80px;
+        animation: heart 7s linear infinite;
+    }
+    .hearteffect{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        bottom: -100px;
+        filter: drop-shadow(0px 0px 10px golden);
+    }
+    @keyframes heart{
+        0%{
+            transform: translateY(0);
+            opacity: 0;
+            
+        }
+        50%{
+            
+            opacity: 1;
+            filter: drop-shadow(0px 0px 10px golden);
+        }
+        70%{
+            opacity: 1;
+            filter: drop-shadow(0px 0px 10px golden);
+        }
+        100%{
+            transform: translateY(-100vh);
+            filter: drop-shadow(0px 0px 10px golden);
+            opacity: 0;
+        }
+    }
+    .hearteffect img:nth-child(1){
+        animation-delay: 2s;
+    }
+    .hearteffect img:nth-child(2){
+        animation-delay: 1.5s;
+    }
+    .hearteffect img:nth-child(3){
+        animation-delay: 3.1s;
+        
+    }
+    .hearteffect img:nth-child(4){
+        animation-delay: 4.5s;
+        width: 65px;
+    }
+    .hearteffect img:nth-child(5){
+        animation-delay: 3.3s;
+        width: 65px;
+    }
+    .hearteffect img:nth-child(6){
+        animation-delay: 6.5s;
+        width: 60px;
+    }
+    .hearteffect img:nth-child(7){
+        animation-delay: 7.5s;
+        width: 65px;
+    }
+    .hearteffect img:nth-child(8){
+        animation-delay: 5.5s;
+        width: 75px;
+    }
+    .scooty{
+        animation:love 2s linear;
+    }
+    @keyframes love{
+        0%{
+            transform: translateX(0px);
+        }
+        50%{
+            transform: translateX(90px);
+            opacity:1;
+        }
+        100%{
+            transform: translateX(120px);
+            opacity:0;
+        }
+    }
+    @media (max-width: 768px) { .inputs { flex-direction: column; height: auto; } .input1, .input2 { width: 80%; margin-bottom: 20px; } button { width: 100%; } } @media (max-width: 480px) { h1 { font-size: 30px; } input { font-size: 16px; } button { font-size: 16px; height: 50px; } }
+    .display p{
+        width: 100%;
+        position: relative;
+    }
+    .display1{
+            color: white;
+            font-size: 35px;
+            text-decoration-color: white;
+            text-shadow: 0px 0px 10px red;
+            font-family: cursive;
+    }
+</style>
+<header>
+    <h1>FLAMES</h1>
+</header>
+<body>
+    <div class="container">
+        <div class="inputs">
+        <div class="input1">
+            <img src="nobinobi.png" alt="Image" width="150px">
+            <img id="heart1" src="heart.png" alt="" width="30px">
+            <input type="" placeholder="Your name" id="myname">
+        </div>
+        <div class="display">
+            <p id="displayFlames"></p>
+        </div>
+        <div class="input2">
+            <img src="shizukahi.png" alt="Image" width="150px">
+            <img id="heart2" src="heart.png" alt="" width="30px">
+            <input type="" placeholder="Partner's name" id="partnername">
+        </div>
+        </div>
+        <div class="button">
+                <img id="scooter" src="scooter.png" width="100px" ><br>
+            <button id="button"></button>
+        </div>
+        
+    </div><br>
+    <div class="hearteffect">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+        <img src="golden.png" alt="">
+    </div>
+</body>
+<script src="flames.js"></script>
+</html>
